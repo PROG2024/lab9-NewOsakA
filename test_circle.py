@@ -8,20 +8,22 @@ Write unit tests as described in README.md.
 
 """
 import unittest
+import math
 from circle import Circle
 
 
 class CircleTest(unittest.TestCase):
     def setUp(self):
-        self.c1 = Circle(7)
-        self.c2 = Circle(24)
-        self.c3 = Circle(25)
+        self.c1 = Circle(3)
+        self.c2 = Circle(4)
+        self.c3 = Circle(5)
 
     def test_add_area_with_typical_values(self):
         """test for add_area method by creating new circle from existing circle"""
         new_circle = self.c1.add_area(self.c2)
         self.assertEqual(new_circle.get_radius(), self.c3.get_radius())
-        self.assertEqual(new_circle.get_area(), self.c3.get_area())
+        new_area = math.pi * (new_circle.get_radius()**2)
+        self.assertEqual(new_circle.get_area(), new_area)
 
     def test_add_area_edge_case(self):
         """test for add area method where some circle has radius 0"""
@@ -29,7 +31,8 @@ class CircleTest(unittest.TestCase):
         cZero = Circle(0)
         new_circle = self.c1.add_area(cZero)
         self.assertEqual(new_circle.get_radius(), self.c1.get_radius())
-        self.assertEqual(new_circle.get_area(), self.c1.get_area())
+        new_area = math.pi * (new_circle.get_radius() ** 2)
+        self.assertEqual(new_circle.get_area(), new_area)
 
     def test_create_circle_with_negative_radius(self):
         """test for circle constructor with negative radius"""

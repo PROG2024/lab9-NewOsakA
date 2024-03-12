@@ -3,6 +3,18 @@ import math
 
 
 class Circle:
+    """
+    dectest for class Circle
+
+    >>> c1 = Circle(3)
+    >>> c2 = Circle(4)
+    >>> c1.add_area(c2)
+    Circle(5.0)
+    >>> nZero = Circle(-1)
+    Traceback (most recent call last):
+    ...
+    ValueError: radius must be non-negative
+    """
 
     def __init__(self, radius):
         """Initialize a circle with given radius.
