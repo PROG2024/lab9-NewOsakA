@@ -7,3 +7,23 @@
 
    You can use pytest or unittest.
 """
+import unittest
+from counter import Counter
+
+
+class CounterTest(unittest.TestCase):
+
+    def test_create_counter(self):
+        count1 = Counter()
+        self.assertEqual(0, count1.count)
+        count1.increment()
+        self.assertEqual(1, count1.count)
+        count1.increment()
+        count1.increment()
+        self.assertEqual(3, count1.count)
+
+        # count value continue from previous counter object
+        count2 = Counter()
+        self.assertEqual(3, count2.count)
+        count2.increment()
+        self.assertEqual(4, count2.count)
