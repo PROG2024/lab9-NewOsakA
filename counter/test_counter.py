@@ -27,3 +27,4 @@ class CounterTest(unittest.TestCase):
         self.assertEqual(3, count2.count)
         count2.increment()
         self.assertEqual(4, count2.count)
+

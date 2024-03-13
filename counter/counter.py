@@ -11,7 +11,7 @@
 
 
 class Counter:
-    """
+    """Doctest from README
     >>> counter = Counter()
     >>> print(counter.count)
     0
